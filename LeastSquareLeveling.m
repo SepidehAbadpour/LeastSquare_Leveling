@@ -27,6 +27,22 @@ function Heights = LeastSquareLeveling(Observations,FirstPointHeight)
 % H1-H4 = -7.348 with precision 3 milimeters
 % H4-H2 = -3.167 with precision 6 milimeters
 % H3-H1 = 15.881 with precision 12 milimeters
-
+NumberOfPoints = max(max(Observations(:,1:2)));
+NumberOfObservations = size(Observations,1);
+A = zeros(NumberOfObservations,NumberOfPoints-1);
+L = zeros(NumberOfObservations,1);
+    for i = 1:NumberOfObservations
+        if Observations(i,1) == 1
+            A(i,Observations(i,2)-1) = 1;
+            L(i,1)= FirstPointHeight + Observations(i,3);
+        elseif Observations(i,2) == 1
+            A(i,Observations(i,1)-1) = -1;
+            L(i,1)= Observations(i,3) - FirstPointHeight;
+        else
+            A(i,Observations(i,2)-1) = 1;
+            A(i,Observations(i,1)-1) = -1;
+            L(i,1)= Observations(i,3);
+        end
+    end
 end
 
