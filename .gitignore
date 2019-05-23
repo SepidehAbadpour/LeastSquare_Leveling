@@ -31,4 +31,7 @@ codegen/
 # Octave session info
 octave-workspace
 
+#Ignote HeightDiffs.mat
+HeightDiffs
+
 # End of https://www.gitignore.io/api/matlab
