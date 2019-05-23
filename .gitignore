@@ -32,6 +32,10 @@ codegen/
 octave-workspace
 
 #Ignote HeightDiffs.mat
-HeightDiffs
+HeightDiffs.mat
+
+#Ignore Dr Motagh's presentations
+TheoryOfErrors_DrMotagh_Part1.ppt
+TheoryOfErrors_DrMotagh_Part2.ppt
 
 # End of https://www.gitignore.io/api/matlab
